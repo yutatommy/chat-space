@@ -30,7 +30,8 @@ Things you may want to cover:
 |password|string|null: false|
 ### Association
 - has_many :groups, through: :groups_users
-- has_many :messages 
+- has_many :messages
+- has_many :groups_users 
 
 ## groups_usersテーブル
 
@@ -51,11 +52,12 @@ Things you may want to cover:
 ### Association
 - has_many users, through: :groups_users
 - has_many messages
+- has_many :groups_users
 
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
+|body|text||
 |image|string||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
