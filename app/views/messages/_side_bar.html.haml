@@ -1,0 +1,30 @@
+.side-ber
+  .side-ber__user-name
+    .side-ber__user-name--box 
+      %p.name masa
+      .side-ber__user-name--box__right
+        .side-ber__user-name--box__right-icon
+          = link_to "#", class: "edit__btn" do
+            = icon('fas', 'edit')
+            %span<>
+          = link_to "#", class: "user-edit__btn" do
+            = icon('fas', 'cog')
+            %span<>
+
+  .side-ber__group-list
+    .side-ber__group-list__block
+      = link_to "#", class: "group" do
+        techcamp
+      = link_to "#", class: "commnet" do
+        まだメッセージはありません
+    .side-ber__group-list__block
+      = link_to "#", class: "group" do
+        techcamp
+      = link_to "#", class: "commnet" do
+        まだメッセージはありません
+    .side-ber__group-list__block
+      = link_to "#", class: "group" do
+        techcamp
+      = link_to "#", class: "commnet" do
+        まだメッセージはありません
+
