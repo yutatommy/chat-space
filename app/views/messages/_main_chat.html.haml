@@ -1,0 +1,41 @@
+.chat-main
+  .chat-main__group
+    .chat-main__group--info
+      .chat-main__group--info__left
+        test
+      .chat-main__group--info__bottom
+        Member : masa
+    .chat-main__group--right
+      = link_to "#", class: "edit__btn" do
+        edit
+
+  .chat-main__messages-list
+    .chat-main__messages-list__block
+      .chat-main__messages-list__block--top
+        .chat-main__messages-list__block--top__left
+          masa
+        .chat-main__messages-list__block--top__right
+          2019/11/20(Wed) 17:43:01
+      .chat-main__messages-list__block--bottom
+        おはよう！
+    .chat-main__messages-list__block
+      .chat-main__messages-list__block--top
+        .chat-main__messages-list__block--top__left
+          masa
+        .chat-main__messages-list__block--top__right
+          2019/11/20(Wed) 17:43:01
+      .chat-main__messages-list__block--bottom
+        おはよう！
+    
+
+  .chat-main__messages-form
+    .chat-main__messages-form--left
+      .chat-main__messages-form--left__text
+        %input.textarea{:name => "textarea", :placeholder => "type a message", :type => "text"}/ 
+      .chat-main__messages-form--left__image
+        %label{class: "image__btn"}
+          = icon('fas', 'image')
+          %input.btn{type: "file"}
+    .chat-main__messages-form--right
+      Send
+    
