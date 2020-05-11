@@ -2,40 +2,25 @@
   .chat-main__group
     .chat-main__group--info
       .chat-main__group--info__left
-        test
+        = @group.name
       .chat-main__group--info__bottom
-        Member : masa
+        Member : 
+        - @group.users.each do |user|
+          =user.name
     .chat-main__group--right
-      = link_to "#", class: "edit__btn" do
+      = link_to edit_group_path(@group), class: "edit__btn" do
         edit
 
   .chat-main__messages-list
-    .chat-main__messages-list__block
-      .chat-main__messages-list__block--top
-        .chat-main__messages-list__block--top__left
-          masa
-        .chat-main__messages-list__block--top__right
-          2019/11/20(Wed) 17:43:01
-      .chat-main__messages-list__block--bottom
-        おはよう！
-    .chat-main__messages-list__block
-      .chat-main__messages-list__block--top
-        .chat-main__messages-list__block--top__left
-          masa
-        .chat-main__messages-list__block--top__right
-          2019/11/20(Wed) 17:43:01
-      .chat-main__messages-list__block--bottom
-        おはよう！
-    
+    = render @messages
 
-  .chat-main__messages-form
+  = form_for [@group, @message], html: {class: "chat-main__messages-form"} do |f|
     .chat-main__messages-form--left
       .chat-main__messages-form--left__text
-        %input.textarea{:name => "textarea", :placeholder => "type a message", :type => "text"}/ 
+        = f.text_field :content, class: 'textarea', placeholder: 'type a message'
       .chat-main__messages-form--left__image
-        %label{class: "image__btn"}
+        = f.label :image, class: 'image__btn' do
           = icon('fas', 'image')
-          %input.btn{type: "file"}
-    .chat-main__messages-form--right
-      Send
+          = f.file_field :image, class: 'btn'
+    = f.submit 'Send', class: 'chat-main__messages-form--right'
     

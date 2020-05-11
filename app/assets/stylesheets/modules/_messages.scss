@@ -48,6 +48,7 @@
 
 
       &__group-list{
+        overflow-y: scroll;
         background-color: #2f3e51;
         height: calc(100vh - 100px);
         padding: 0 20px;
@@ -77,11 +78,12 @@
   height: 100vh;
     &__group{
       display: flex;
+      border-bottom: solid #eeeeee 1px;
       &--info{
         background-color:#ffffff;
         height: 100px;
         width: calc(100vw - 300px);
-        border-bottom: solid #eeeeee 1px;
+        
         position: relative;
         &__left{
           font-size: 20px;
@@ -118,6 +120,7 @@
     height: calc(100vh - 100px - 90px);
     width: calc(100vw - 300px);
     padding-top: 35px;
+    overflow-y: scroll;
       &__block{
         margin-left: 40px;
           &--top{
@@ -194,6 +197,6 @@
         margin-right: 40px;
         margin-left: 15px;
         padding: 0 30px;
+        }
       }
-  }
 }
