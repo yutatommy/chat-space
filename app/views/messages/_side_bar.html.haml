@@ -14,9 +14,10 @@
 
   .side-ber__group-list
     - current_user.groups.each do |group|
-      .side-ber__group-list__block  
-        = link_to "#", class: "group" do
-          =group.name
-        = link_to "#", class: "commnet" do
-          まだメッセージはありません
+      .side-ber__group-list__block
+        = link_to group_messages_path(group), class: "group" do
+          = group.name
+        = link_to group_messages_path(group), class: "commnet" do
+          = group.show_last_message
    
+
